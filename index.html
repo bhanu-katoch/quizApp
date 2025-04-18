@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="dark-mode">
+    <div class="container">
+        <!-- Quiz Section -->
+        <div id="quiz-container" style="display: visible;">
+            <h1>Quiz Master</h1>
+            <div id="timer">30</div>
+            <div id="question-progress">Question 1/10</div>
+            
+            <div id="question">What is the capital of France?</div>
+            <div id="options">
+                <button class="option">Paris</button>
+                <button class="option">London</button>
+                <button class="option">Berlin</button>
+                <button class="option">Rome</button>
+            </div>
+            
+            <div id="navigation">
+                <button id="prev-btn">⬅️ Previous</button>
+                <button id="next-btn">Next ➡️</button>
+            </div>
+
+            <div id="dark-mode-toggle">
+                <button>🌙 Toggle Dark Mode</button>
+            </div>
+        </div>
+
+        <!-- Result Section -->
+        <div id="result-container" style="display: none;">
+            <h1>Quiz Complete!</h1>
+            <div id="score">Your score: 8/10</div>
+            <button id="retry-btn">Retry Quiz</button>
+            <button id="home-btn">Go to Home</button>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
