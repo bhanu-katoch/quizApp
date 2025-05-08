@@ -24,12 +24,10 @@ let currentQuestionIndex = 0;
 let qClickCount = 0;
 let score = 0;
 const totalQuestions = quizData.length;
-let darkModeEnabled = false;
 
 // Dark Mode Toggle
 darkModeToggle.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
-  darkModeEnabled = !darkModeEnabled;
 });
 
 // Load a question
@@ -52,7 +50,7 @@ function startTimer() {
   clearInterval(intervalID)
   intervalID = setInterval(() => {
 
-    timerEl.textContent = timeSlots[currentQuestionIndex];
+    timerEl.textContent = timeSlots[currentQuestionIndex]-1;
 
     if (timeSlots[currentQuestionIndex] <= 0) {
       clearInterval(intervalID);
@@ -75,13 +73,11 @@ function startTimer() {
 nextBtn.addEventListener("click", () => {
   currentQuestionIndex = Math.min(currentQuestionIndex + 1, totalQuestions - 1);
   loadQuestion(currentQuestionIndex);
-  startTimer();
 });
 
 prevBtn.addEventListener("click", () => {
   currentQuestionIndex = Math.max(currentQuestionIndex - 1, 0);
   loadQuestion(currentQuestionIndex);
-  startTimer();
 });
 
 // Initial call
