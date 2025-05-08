@@ -81,5 +81,14 @@ prevBtn.addEventListener("click", () => {
 });
 
 // Initial call
+document.getElementById("retry-btn").addEventListener("click",()=>{
+  for (let i = 0; i < timeSlots.length; i++) {
+      timeSlots[i] = 5;
+  }
+  currentQuestionIndex = 0;
+  document.getElementById("quiz-container").style.display = "block";
+  document.getElementById("result-container").style.display = "none";
+  loadQuestion(currentQuestionIndex)
+});
 loadQuestion(currentQuestionIndex);
 
