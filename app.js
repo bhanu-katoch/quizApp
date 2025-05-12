@@ -143,17 +143,22 @@ let ans=0
 
 const optionButtons = document.querySelectorAll('.option');
 optionButtons.forEach(btn => {
-  btn.addEventListener("click", () => {
-    // Deselect all
-    optionButtons.forEach(b => b.classList.remove("selected"));
+  if (timeSlots[currentQuestionIndex]<=0) {
+    return
+  }
+  else{
+    btn.addEventListener("click", () => {
+      // Deselect all
+      optionButtons.forEach(b => b.classList.remove("selected"));
 
-    // Select the clicked one
-    btn.classList.add("selected");
+      // Select the clicked one
+      btn.classList.add("selected");
 
-    // Save the selected answer
-    selectedAnswer[currentQuestionIndex] = btn.textContent;
-    console.log("Selected:", selectedAnswer[currentQuestionIndex]);
-  });
+      // Save the selected answer
+      selectedAnswer[currentQuestionIndex] = btn.textContent;
+      console.log("Selected:", selectedAnswer[currentQuestionIndex]);
+    });
+  }
 });
 submitBtn.addEventListener("click",()=>{
     for (let i = 0; i < quizData.length; i++) {

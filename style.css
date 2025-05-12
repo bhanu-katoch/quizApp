@@ -91,23 +91,21 @@ button {
     margin: 5px;
 }
 
-#prev-btn,#next-btn {
+#prev-btn, #next-btn {
     background-color: #e9c46a;
     color: white;
     border: none;
 }
 
 #submit-btn {
-    background-color: #28a745; /* Green */
+    background-color: #28a745;
     color: white;
-    border: none;  
+    border: none;
 }
-  
-  #submit-btn:hover {
+#submit-btn:hover {
     background-color: #218838;
-  }
-  
-  
+}
+
 #dark-mode-toggle button {
     background-color: #264653;
     color: white;
@@ -121,7 +119,7 @@ button {
 #result-container {
     text-align: center;
 }
-#result-container div{
+#result-container div {
     color: #000;
 }
 
@@ -132,26 +130,105 @@ button {
     border-radius: 5px;
     margin: 10px;
 }
+
 /* Dark Mode Styles */
 body.dark-mode {
     background-color: #1a1a1a;
     color: white;
 }
-body.dark-mode #quiz-container h1{
+body.dark-mode #quiz-container h1 {
     color: white;
 }
 body.dark-mode #result-container div,
 body.dark-mode #result-container h1 {
     color: white;
 }
-
-
 body.dark-mode .container {
     background-color: #333;
 }
-
-
-
 body.dark-mode #dark-mode-toggle button {
     background-color: #1d3557;
+}
+
+/* ------------------------- */
+/* ✅ Responsive Design      */
+/* ------------------------- */
+
+/* For tablets (<= 768px) */
+@media (max-width: 768px) {
+    .container {
+        padding: 15px;
+    }
+    h1 {
+        font-size: 1.6rem;
+    }
+    #result-container h1 {
+        font-size: 1.5rem;
+    }
+
+    #result-container div {
+        font-size: 1rem;
+    }
+
+    #retry-btn{
+        width: 100%;
+        font-size: 1rem;
+        padding: 12px;
+    }
+    #timer {
+        font-size: 1.2rem;
+    }
+    #question {
+        font-size: 1.3rem;
+    }
+    .option {
+        font-size: 1rem;
+        padding: 12px;
+    }
+    button {
+        padding: 8px 16px;
+        font-size: 0.95rem;
+    }
+}
+
+/* For phones (<= 480px) */
+@media (max-width: 480px) {
+    body {
+        padding: 10px;
+        height: auto;
+        align-items: flex-start;
+    }
+    .container {
+        margin-top: 100px;
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: none;
+    }
+
+    #result-container h1 {
+        font-size: 1.3rem;
+    }
+
+    #result-container div {
+        font-size: 0.95rem;
+    }
+
+    h1 {
+        font-size: 1.4rem;
+    }
+    #question {
+        font-size: 1.1rem;
+    }
+    .option {
+        font-size: 0.95rem;
+        padding: 10px;
+    }
+    button {
+        font-size: 0.9rem;
+        padding: 8px 14px;
+    }
+    #retry-btn{
+        padding: 12px;
+        font-size: 0.9rem;
+    }
 }
