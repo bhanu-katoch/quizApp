@@ -76,6 +76,7 @@ function loadQuestion(index) {
   prevBtn.style.display = index === 0 ? 'none' : 'inline-block';
   nextBtn.style.display = index === totalQuestions - 1 ? 'none' : 'inline-block';
   submitBtn.style.display = index === totalQuestions - 1 ? 'inline-block' : 'none';
+  document.getElementById("prog").value = ((index+1)/totalQuestions)*100
   timerEl.textContent = timeSlots[index]
   const currentQuestion = quizData[index];
   questionEl.textContent = currentQuestion.question;
@@ -115,7 +116,7 @@ function startTimer() {
         document.getElementById("sQ").textContent=ans
         document.getElementById("tQ").textContent=totalQuestions
         document.getElementById("quiz-container").style.display = "none";
-        document.getElementById("result-container").style.display = "block";
+        document.getElementById("result-container").style.display = "inline-block";
       }
       else{
         nextBtn.click(); // Simulate next click
@@ -163,14 +164,16 @@ submitBtn.addEventListener("click",()=>{
     document.getElementById("sQ").textContent=ans
     document.getElementById("tQ").textContent=totalQuestions
     document.getElementById("quiz-container").style.display = "none";
-    document.getElementById("result-container").style.display = "block";
+    document.getElementById("result-container").style.display = "inline-block";
   
 })
 // Initial call
 document.getElementById("retry-btn").addEventListener("click",()=>{
-  for (let i = 0; i < timeSlots.length; i++) {
+  for (let i = 0; i < totalQuestions; i++) {
       timeSlots[i] = 5;
+      selectedAnswer[i] = null
   }
+  ans=0
   qClickCount = 0
   currentQuestionIndex = 0;
   document.getElementById("quiz-container").style.display = "block";
