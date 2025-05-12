@@ -54,14 +54,14 @@ function startTimer() {
 
     if (timeSlots[currentQuestionIndex] <= 0) {
       clearInterval(intervalID);
-      nextBtn.click(); // Simulate next click
-
+      
       qClickCount++;
-      if (qClickCount < totalQuestions) {
-        startTimer();
-      } else {
+      if (qClickCount >= totalQuestions) {
         document.getElementById("quiz-container").style.display = "none";
         document.getElementById("result-container").style.display = "block";
+      }
+      else{
+        nextBtn.click(); // Simulate next click
       }
     }
 
@@ -71,7 +71,7 @@ function startTimer() {
 
 // Event Listeners for Next and Previous buttons
 nextBtn.addEventListener("click", () => {
-  currentQuestionIndex = Math.min(currentQuestionIndex + 1, totalQuestions - 1);
+  currentQuestionIndex = (currentQuestionIndex+1)%totalQuestions;
   loadQuestion(currentQuestionIndex);
 });
 
@@ -85,6 +85,7 @@ document.getElementById("retry-btn").addEventListener("click",()=>{
   for (let i = 0; i < timeSlots.length; i++) {
       timeSlots[i] = 5;
   }
+  qClickCount = 0
   currentQuestionIndex = 0;
   document.getElementById("quiz-container").style.display = "block";
   document.getElementById("result-container").style.display = "none";
