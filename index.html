@@ -25,7 +25,8 @@
             <div id="navigation">
                 <button id="prev-btn">⬅️ Previous</button>
                 <button id="next-btn">Next ➡️</button>
-            </div>
+                <button id="submit-btn" style="display: none;">✅ Submit</button>
+            </div> 
 
             <div id="dark-mode-toggle">
                 <button>🌙 Toggle Dark Mode</button>
@@ -35,7 +36,7 @@
         <!-- Result Section -->
         <div id="result-container" style="display: none;">
             <h1>Quiz Complete!</h1>
-            <div id="score">Your score: 8/10</div>
+            <div id="score">Your score: <span id="sQ">0</span>/<span id="tQ">10</span></div>
             <button id="retry-btn">Retry Quiz</button>
             <button id="home-btn">Go to Home</button>
         </div>

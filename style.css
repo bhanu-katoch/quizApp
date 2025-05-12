@@ -70,7 +70,11 @@ h1 {
     font-size: 1.1rem;
     transition: background-color 0.3s;
 }
-
+.option.selected {
+    background-color: #4CAF50;
+    color: white;
+    border-color: #4CAF50;
+}
 .option:hover {
     background-color: #264653;
 }
@@ -87,18 +91,23 @@ button {
     margin: 5px;
 }
 
-#prev-btn {
+#prev-btn,#next-btn {
     background-color: #e9c46a;
     color: white;
     border: none;
 }
 
-#next-btn {
-    background-color: #2a9d8f;
+#submit-btn {
+    background-color: #28a745; /* Green */
     color: white;
-    border: none;
+    border: none;  
 }
-
+  
+  #submit-btn:hover {
+    background-color: #218838;
+  }
+  
+  
 #dark-mode-toggle button {
     background-color: #264653;
     color: white;
