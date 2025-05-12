@@ -62,7 +62,7 @@ const timerEl = document.getElementById('timer');
 const darkModeToggle = document.getElementById("dark-mode-toggle");
 
 let currentQuestionIndex = 0;
-let qClickCount = 0;
+let qTimeComp = 0;
 let score = 0;
 const totalQuestions = quizData.length;
 
@@ -106,8 +106,8 @@ function startTimer() {
     if (timeSlots[currentQuestionIndex] <= 0) {
       clearInterval(intervalID);
       
-      qClickCount++;
-      if (qClickCount >= totalQuestions) {
+      qTimeComp++;
+      if (qTimeComp >= totalQuestions) {
         for (let i = 0; i < quizData.length; i++) {
           if (quizData[i].answer==selectedAnswer[i]) {
             ans++
@@ -174,7 +174,7 @@ document.getElementById("retry-btn").addEventListener("click",()=>{
       selectedAnswer[i] = null
   }
   ans=0
-  qClickCount = 0
+  qTimeComp = 0
   currentQuestionIndex = 0;
   document.getElementById("quiz-container").style.display = "block";
   document.getElementById("result-container").style.display = "none";
